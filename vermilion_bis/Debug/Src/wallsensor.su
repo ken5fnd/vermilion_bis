@@ -1,0 +1,4 @@
+wallsensor.c:11:6:wall_exist	0	static
+wallsensor.c:29:6:get_wallsensor_data	48	static
+wallsensor.c:71:6:get_wallsensor_data2	48	static
+wallsensor.c:147:6:edge_break	56	static

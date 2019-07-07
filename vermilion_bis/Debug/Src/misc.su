@@ -1,0 +1,12 @@
+misc.c:19:6:LED	16	static
+misc.c:30:6:Speaker_ON	16	static
+misc.c:36:6:Speaker_Herz	16	static
+misc.c:41:6:Speaker_OFF	16	static
+misc.c:47:6:Speaker_Scale	16	static
+misc.c:53:6:reset_status	12	static
+misc.c:59:6:reset_error	8	static
+misc.c:70:6:save_log	4	static
+misc.c:108:6:print_log	344	static
+misc.c:125:6:printMaze	40	static
+misc.c:182:6:printPass	16	static
+misc.c:259:6:TestTurn	24	static

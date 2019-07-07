@@ -1,0 +1,4 @@
+gyro.c:15:6:gyro_rw	40	static
+gyro.c:26:6:gyro_setup	48	static
+gyro.c:58:9:get_ang_vel	48	static
+gyro.c:94:9:gyro_get_reference	64	static

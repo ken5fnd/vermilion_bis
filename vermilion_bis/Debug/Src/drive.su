@@ -1,0 +1,5 @@
+drive.c:13:6:trapezoid_acccel	88	static
+drive.c:80:6:trapezoid_slalome	24	static
+drive.c:146:6:napier_slalome	40	static
+drive.c:199:6:accel	0	static
+drive.c:216:6:stop	32	static

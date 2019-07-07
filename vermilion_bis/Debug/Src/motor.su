@@ -1,0 +1,7 @@
+motor.c:12:6:set_motor_duty	16	static
+motor.c:44:6:enable_motor	16	static
+motor.c:51:6:disable_motor	8	static
+motor.c:59:6:setup_suction	0	static
+motor.c:64:6:enable_suction	24	static
+motor.c:79:6:disable_suction	16	static
+motor.c:96:6:drive_motor	48	static

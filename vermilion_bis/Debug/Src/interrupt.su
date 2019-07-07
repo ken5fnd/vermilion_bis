@@ -1,0 +1,2 @@
+interrupt.c:20:6:interrupt_TIM6	32	static
+interrupt.c:92:6:interrupt_TIM7	16	static
