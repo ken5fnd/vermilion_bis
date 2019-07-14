@@ -92,24 +92,11 @@ int16_t get_ang_vel(uint8_t _axis) {
 	return gyro_data;
 }
 int16_t gyro_get_reference() {
-	uint8_t Data_Input[] = { 0x00, 0x00 };
-	uint8_t Data_Output[2];
-	int16_t gyro_data;
 	int32_t sum_data = 0;
 	Flag_gyroEn = false;
 	HAL_Delay(100);
 	for (uint16_t i = 0; i < 1000; i++) {
-		Data_Input[0] = 0xC5;
-		Data_Input[1] = 0x00;
-		gyro_rw(Data_Input, Data_Output);
-		gyro_data = Data_Output[1];
-		gyro_data = gyro_data << 8;
-
-		Data_Input[0] = 0xC6;
-		Data_Input[1] = 0x00;
-		gyro_rw(Data_Input, Data_Output);
-		gyro_data |= (int16_t) Data_Output[1];
-		sum_data += (int32_t) gyro_data;
+		sum_data += (int32_t) get_ang_vel(2);
 		HAL_Delay(1);
 	}
 	return (int16_t) (sum_data / 1000);

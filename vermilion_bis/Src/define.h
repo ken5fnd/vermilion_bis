@@ -42,7 +42,7 @@
 
 //#define LOG_V_BATT
 
-//#define TEST_TURN	trapezoid_acccel(0.6, 0.0, 0.09 * 7.0, 17.0, true, false)
+#define TEST_TURN	trapezoid_acccel(0.6, 0.0, 0.09 * 7.0, 17.0, false, false)
 //#define TEST_TURN	trapezoid_acccel(1.0, 0.0, 0.127 * 8.0, 10.0, true, true)
 //#define TEST_TURN trapezoid_slalome(700.0, -360.0, 10000.0)
 
@@ -57,7 +57,7 @@
 
 //#define TURN_TEST_MODE
 //
-#define TEST_TURN TestTurn(Turn90, Right, &v15d90_R, 100)
+//#define TEST_TURN TestTurn(Turn90, Right, &v15d90_R, 100)
 //#define TEST_TURN TestTurn(Turn180, Right, &v13d180_R, 100)
 //#define TEST_TURN TestTurn(Turn45_I, Right, &v13d45_I_R, 100)
 //#define TEST_TURN TestTurn(Turn135_I, Right, &v13d135_I_R, 100)

@@ -364,26 +364,13 @@ void selectmenu() {
 //			Speaker_Herz(&htim2, 2093);
 //			HAL_Delay(70);
 //			Speaker_OFF(&htim2);
-//			gyro_ref = gyro_get_reference();
+			gyro_ref = gyro_get_reference();
 ////			printf("ref=%f\n", (float)gyro_ref);
-//			Flag_gyroEn = true;
+			Flag_gyroEn = true;
 			while (1) {
-//				Data_Input[0] = 0xC5;
-//				Data_Input[1] = 0x00;
-//				gyro_rw(Data_Input, Data_Output);
-//				gyro_data = Data_Output[1];
-//				gyro_data = gyro_data << 8;
-//
-//				Data_Input[0] = 0xC6;
-//				Data_Input[1] = 0x00;
-//				gyro_rw(Data_Input, Data_Output);
-//				gyro_data |= (int16_t) Data_Output[1];
-//
-//				printf("%f\n", (float) gyro_data / 16.384);
-
-				printf("\rLF=%6.3f,LS=%6.3f,RS=%6.3f,RF=%6.3f", IR_Sen.LF,
-						IR_Sen.LS, IR_Sen.RS, IR_Sen.RF);
-//				printf("%f\n", realState.ang_vel);
+//				printf("\rLF=%6.3f,LS=%6.3f,RS=%6.3f,RF=%6.3f", IR_Sen.LF,
+//						IR_Sen.LS, IR_Sen.RS, IR_Sen.RF);
+				printf("%f\n", realState.ang_vel);
 				HAL_Delay(100);
 			}
 			printf("\n");
@@ -412,6 +399,7 @@ void selectmenu() {
 				log_real_vel[i] = 0.0;
 			}
 			gyro_ref = gyro_get_reference();
+			printf("%d\n", gyro_ref);
 			Flag_encEn = true;
 			Flag_gyroEn = true;
 			//HAL_Delay(10);
@@ -424,7 +412,7 @@ void selectmenu() {
 //			HAL_Delay(500);
 //			Flag_diagMode = true;
 //			Flag_degConEn = true;
-	//		Flag_logEn = true;
+			Flag_logEn = true;
 			TEST_TURN;
 			reset_status();
 			reset_error();

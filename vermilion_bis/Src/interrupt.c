@@ -24,9 +24,9 @@ void interrupt_TIM6() {
 	float ang_vel_gyro;
 	static float ex_ang_vel[3];
 	if (Flag_modeSelectEn) {
-		mode_gyro_X = -1 * get_ang_vel(0);
-		mode_gyro_Y = get_ang_vel(2);
-		mode_gyro_Z = get_ang_vel(1);
+		mode_gyro_X = get_ang_vel(0);
+		mode_gyro_Y = get_ang_vel(1);
+		mode_gyro_Z = get_ang_vel(2);
 	}
 	if (Flag_countTimeEn) {
 		countTime += CONTROL_CYCLE;
@@ -38,21 +38,11 @@ void interrupt_TIM6() {
 		idealState.dis += idealState.vel * CONTROL_CYCLE;
 	}
 	if (Flag_gyroEn) {
-		Data_Input[0] = 0xC5;
-		Data_Input[1] = 0x00;
-		gyro_rw(Data_Input, Data_Output);
-		gyro_data = Data_Output[1];
-		gyro_data = gyro_data << 8;
-
-		Data_Input[0] = 0xC6;
-		Data_Input[1] = 0x00;
-		gyro_rw(Data_Input, Data_Output);
-		gyro_data |= (int16_t) Data_Output[1];
-		ang_vel_gyro = (float) gyro_data; //(float) (get_ang_vel(1) - gyro_ref);
+		ang_vel_gyro = 	(float) (get_ang_vel(2) - gyro_ref);
 		if (ang_vel_gyro > 0.0) {
-			ang_vel_gyro /= 16.384 * 1.012;
+			ang_vel_gyro /= 16.384 * 1.0;
 		} else {
-			ang_vel_gyro /= 16.384 * 1.007;
+			ang_vel_gyro /= 16.384 * 1.0;
 		}
 //		if (fabs(ang_vel_gyro - ex_ang_vel[0]) > 300.0) {
 //			ang_vel_gyro = ex_ang_vel[0];
